@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>মেশিন লার্নিং: ইন্ডাস্ট্রি ট্রেন্ডস ইনফোগ্রাফিক</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #F7F7F7;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flowchart-node {
+            border: 2px solid #525174;
+            color: #525174;
+            background-color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .flowchart-arrow {
+            font-size: 2rem;
+            color: #525174;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0.5rem;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #3D315B, #00C9A7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="text-[#525174]">
+
+    <!-- Palette: Brilliant Blues (#F9F871, #00C9A7, #525174, #3D315B, #F7F7F7) -->
+    <!-- Plan: Hero -> What is ML -> Types -> Learning Process -> Math Foundation -> Math in Action -> Applications -> Footer -->
+    <!-- Visualization Choices: HTML/CSS Flowcharts, Chart.js (Canvas) for Scatter/Donut, Unicode Icons. No SVG or Mermaid.js used. -->
+
+    <header class="bg-[#3D315B] text-white text-center py-16 px-4">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 gradient-text" style="background: linear-gradient(90deg, #F9F871, #00C9A7); -webkit-background-clip: text;">মেশিন লার্নিং: ডেটা থেকে জ্ঞানে যাত্রা</h1>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-200">কীভাবে মেশিন লার্নিং ডেটার শক্তি ব্যবহার করে আমাদের বিশ্বকে পরিবর্তন করছে, তার একটি ভিজ্যুয়াল অন্বেষণ।</p>
+        <div class="mt-12">
+            <p class="text-lg text-gray-300">বিশ্বব্যাপী এআই এবং মেশিন লার্নিং বাজার ২০৩০ সালের মধ্যে পৌঁছাবে বলে অনুমান করা হচ্ছে</p>
+            <p class="text-6xl font-bold text-[#F9F871] mt-2">$১.৮ ট্রিলিয়ন</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+
+        <section id="what-is-ml" class="mb-20 text-center">
+            <h2 class="text-3xl font-bold mb-4 gradient-text">মেশিন লার্নিং কী?</h2>
+            <p class="max-w-3xl mx-auto text-lg mb-8">
+                মেশিন লার্নিং হলো কৃত্রিম বুদ্ধিমত্তার একটি শাখা যা কম্পিউটারকে সুস্পষ্টভাবে প্রোগ্রাম না করেই ডেটা থেকে শিখতে এবং সিদ্ধান্ত নিতে সক্ষম করে। এটি প্যাটার্ন শনাক্ত করে এবং অভিজ্ঞতার সাথে সাথে নিজের কার্যকারিতা উন্নত করে।
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <div class="flowchart-node">ডেটা</div>
+                <div class="flowchart-arrow">&#8594;</div>
+                <div class="flowchart-node">অ্যালগরিদম</div>
+                <div class="flowchart-arrow">&#8594;</div>
+                <div class="flowchart-node">প্যাটার্ন</div>
+                <div class="flowchart-arrow">&#8594;</div>
+                <div class="flowchart-node">ভবিষ্যদ্বাণী</div>
+            </div>
+        </section>
+
+        <section id="types-of-ml" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-4 gradient-text">মেশিন লার্নিং এর প্রকারভেদ</h2>
+            <p class="max-w-3xl mx-auto text-center text-lg mb-12">
+                মেশিন লার্নিংকে প্রধানত চারটি ভাগে ভাগ করা যায়, যা ডেটা এবং শেখার পদ্ধতির উপর নির্ভর করে। প্রতিটি প্রকারের নিজস্ব অ্যাপ্লিকেশন এবং কৌশল রয়েছে।
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#00C9A7]">
+                    <h3 class="text-2xl font-bold mb-3 flex items-center"><span class="text-3xl mr-3">&#127919;</span>সুপারভাইজড</h3>
+                    <p class="text-base">লেবেলযুক্ত ডেটা থেকে শেখে। ইনপুট এবং কাঙ্ক্ষিত আউটপুট উভয়ই সরবরাহ করা হয়। এটি মূলত ক্লাসিফিকেশন (ডেটা আলাদা করা) এবং রিগ্রেশন (মান ভবিষ্যদ্বাণী করা) এর জন্য ব্যবহৃত হয়।</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#F9F871]">
+                    <h3 class="text-2xl font-bold mb-3 flex items-center"><span class="text-3xl mr-3">&#128270;</span>আনসুপারভাইজড</h3>
+                    <p class="text-base">লেবেলবিহীন ডেটা থেকে শেখে। ডেটার মধ্যে লুকানো প্যাটার্ন বা কাঠামো খুঁজে বের করে। এটি ক্লাস্টারিং (ডেটা গ্রুপিং) এবং অ্যাসোসিয়েশনের জন্য ব্যবহৃত হয়।</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#525174]">
+                    <h3 class="text-2xl font-bold mb-3 flex items-center"><span class="text-3xl mr-3">&#129521;</span>সেমি-সুপারভাইজড</h3>
+                    <p class="text-base">অল্প পরিমাণ লেবেলযুক্ত এবং বিপুল পরিমাণ লেবেলবিহীন ডেটার মিশ্রণ ব্যবহার করে। এটি এমন ক্ষেত্রে কার্যকর যেখানে ডেটা লেবেল করা ব্যয়বহুল।</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#3D315B]">
+                    <h3 class="text-2xl font-bold mb-3 flex items-center"><span class="text-3xl mr-3">&#127942;</span>রিইনফোর্সমেন্ট</h3>
+                    <p class="text-base">পুরস্কার এবং শাস্তির মাধ্যমে শেখে। একটি এজেন্ট পরিবেশে কাজ করে এবং তার কাজের ফলাফলের উপর ভিত্তি করে শেখে, যাতে সর্বাধিক পুরস্কার অর্জন করা যায়।</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="learning-process" class="mb-20 text-center">
+            <h2 class="text-3xl font-bold mb-4 gradient-text">শেখার প্রক্রিয়া: একটি পুনরাবৃত্তিমূলক যাত্রা</h2>
+             <p class="max-w-3xl mx-auto text-lg mb-12">
+                মেশিন লার্নিং মডেল প্রশিক্ষণ একটি চক্রাকার প্রক্রিয়া। মডেলটি ক্রমাগত ডেটা থেকে শেখে, তার ভুল পরিমাপ করে (লস ফাংশনের মাধ্যমে) এবং নিজেকে উন্নত করতে প্যারামিটারগুলি সামঞ্জস্য করে (অপ্টিমাইজেশনের মাধ্যমে)।
+            </p>
+            <div class="flex items-center justify-center p-6 bg-white rounded-lg shadow-xl md:col-span-2">
+                 <div class="flex flex-col md:flex-row items-center justify-around w-full">
+                    <div class="text-center m-2">
+                        <div class="text-5xl font-bold text-[#00C9A7]">১</div>
+                        <p class="font-semibold mt-2">মডেল তৈরি</p>
+                    </div>
+                    <div class="flowchart-arrow transform rotate-90 md:rotate-0">&rarr;</div>
+                    <div class="text-center m-2">
+                         <div class="text-5xl font-bold text-[#F9F871]">২</div>
+                        <p class="font-semibold mt-2">মূল্যায়ন (লস ফাংশন)</p>
+                    </div>
+                    <div class="flowchart-arrow transform rotate-90 md:rotate-0">&rarr;</div>
+                    <div class="text-center m-2">
+                        <div class="text-5xl font-bold text-[#525174]">৩</div>
+                        <p class="font-semibold mt-2">প্যারামিটার আপডেট</p>
+                    </div>
+                     <div class="flowchart-arrow transform rotate-90 md:rotate-0 text-gray-400 text-4xl">&#8635;</div>
+                     <p class="font-bold text-gray-500">পুনরাবৃত্তি</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="math-foundation" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-4 gradient-text">গণিতের ভিত্তি</h2>
+            <p class="max-w-3xl mx-auto text-center text-lg mb-12">
+                গণিত হলো মেশিন লার্নিংয়ের ভাষা এবং ইঞ্জিন। অ্যালগরিদমগুলির কার্যকারিতা এবং অপ্টিমাইজেশনের জন্য লিনিয়ার অ্যালজেব্রা, ক্যালকুলাস, এবং সম্ভাব্যতা অপরিহার্য।
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <p class="text-4xl mb-3">&#128200;</p>
+                    <h3 class="text-xl font-semibold">লিনিয়ার অ্যালজেব্রা</h3>
+                    <p class="mt-2 text-sm">ডেটা উপস্থাপনের জন্য ভেক্টর এবং ম্যাট্রিক্স ব্যবহার করা হয়। PCA এবং নিউরাল নেটওয়ার্কে এর ব্যাপক প্রয়োগ রয়েছে।</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <p class="text-4xl mb-3">&#8747;</p>
+                    <h3 class="text-xl font-semibold">ক্যালকুলাস</h3>
+                    <p class="mt-2 text-sm">মডেল অপ্টিমাইজেশনের জন্য ব্যবহৃত হয়। গ্রেডিয়েন্ট ডিসেন্ট অ্যালগরিদম ডেরিভেটিভ ব্যবহার করে লস ফাংশন কমায়।</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <p class="text-4xl mb-3">&#127922;</p>
+                    <h3 class="text-xl font-semibold">সম্ভাব্যতা ও পরিসংখ্যান</h3>
+                    <p class="mt-2 text-sm">অনিশ্চয়তা মডেলিং এবং ডেটা বিশ্লেষণের জন্য ব্যবহৃত হয়। নেইভ বেয়েস এবং মডেল মূল্যায়নে এর ভূমিকা অপরিহার্য।</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <p class="text-4xl mb-3">&#128218;</p>
+                    <h3 class="text-xl font-semibold">তথ্য তত্ত্ব</h3>
+                    <p class="mt-2 text-sm">ডেটার বিশৃঙ্খলা পরিমাপ করে। ডিসিশন ট্রি তৈরিতে এন্ট্রপি এবং ইনফরমেশন গেইন ধারণা ব্যবহৃত হয়।</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="math-in-action" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-4 gradient-text">গণিত যেভাবে অ্যালগরিদমকে চালিত করে</h2>
+             <p class="max-w-3xl mx-auto text-center text-lg mb-12">
+                বিভিন্ন অ্যালগরিদম তাদের মূল কার্যকারিতার জন্য নির্দিষ্ট গাণিতিক ধারণার উপর নির্ভর করে। এখানে কয়েকটি উদাহরণ দেওয়া হলো যা দেখায় গণিত কীভাবে তত্ত্বকে বাস্তবে রূপান্তরিত করে।
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-xl">
+                    <h3 class="text-2xl font-bold mb-4">ক্যালকুলাস: লিনিয়ার রিগ্রেশন অপ্টিমাইজেশন</h3>
+                    <p class="mb-4">লিনিয়ার রিগ্রেশনে, ক্যালকুলাস (গ্রেডিয়েন্ট ডিসেন্টের মাধ্যমে) ডেটা পয়েন্টগুলির সাথে সবচেয়ে ভালো ফিট করে এমন একটি রেখা খুঁজে বের করতে ব্যবহৃত হয়। এটি পুনরাবৃত্তিমূলকভাবে ত্রুটি (লস) কমিয়ে মডেলের প্যারামিটারগুলিকে সামঞ্জস্য করে।</p>
+                    <div class="chart-container">
+                        <canvas id="scatterChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-xl">
+                    <h3 class="text-2xl font-bold mb-4">সম্ভাব্যতা: স্প্যাম ক্লাসিফিকেশন</h3>
+                    <p class="mb-4">নেইভ বেয়েস ক্লাসিফায়ার বেয়েস থিওরেম ব্যবহার করে একটি ইমেল স্প্যাম হওয়ার সম্ভাবনা গণনা করে। এটি শব্দের উপস্থিতির উপর ভিত্তি করে ডেটাকে শ্রেণীবদ্ধ করে।</p>
+                    <div class="chart-container">
+                        <canvas id="donutChart"></canvas>
+                    </div>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-xl md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4 text-center">তথ্য তত্ত্ব: ডিসিশন ট্রি</h3>
+                     <p class="mb-6 max-w-2xl mx-auto text-center">ডিসিশন ট্রি ডেটাকে বিভক্ত করার জন্য সেরা বৈশিষ্ট্য খুঁজে বের করতে এন্ট্রপি বা জিনি ইম্পিউরিটির মতো ধারণা ব্যবহার করে। লক্ষ্য হলো প্রতিটি ধাপে তথ্যের অনিশ্চয়তা কমানো।</p>
+                    <div class="flex justify-center items-start">
+                        <div class="flex flex-col items-center">
+                            <div class="flowchart-node w-48">ঋণের আবেদন</div>
+                            <div class="flex mt-4">
+                                <div class="flex flex-col items-center mx-8">
+                                    <div class="h-10 w-px bg-[#525174]"></div>
+                                    <div class="text-sm font-semibold text-[#525174] my-1">আয় > ৫০ হাজার?</div>
+                                    <div class="h-10 w-px bg-[#525174]"></div>
+                                    <div class="flex">
+                                        <div class="flex flex-col items-center mr-8">
+                                             <div class="text-sm font-semibold text-green-600">হ্যাঁ</div>
+                                             <div class="h-8 w-px bg-green-600"></div>
+                                             <div class="flowchart-node bg-green-100 border-green-600 text-green-800">অনুমোদিত</div>
+                                        </div>
+                                        <div class="flex flex-col items-center ml-8">
+                                            <div class="text-sm font-semibold text-red-600">না</div>
+                                            <div class="h-8 w-px bg-red-600"></div>
+                                            <div class="flowchart-node bg-red-100 border-red-600 text-red-800">প্রত্যাখ্যাত</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="applications" class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-4 gradient-text">বাস্তব জীবনের প্রয়োগ</h2>
+             <p class="max-w-3xl mx-auto text-center text-lg mb-12">
+                মেশিন লার্নিং আমাদের দৈনন্দিন জীবনের একটি অবিচ্ছেদ্য অংশ হয়ে উঠেছে, যা প্রায়শই আমাদের অলক্ষ্যে কাজ করে ব্যবহারকারীর অভিজ্ঞতা এবং সিস্টেমের দক্ষতা উন্নত করে।
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-center">
+                    <span class="text-4xl mr-4">&#128100;</span>
+                    <div>
+                        <h3 class="text-lg font-semibold">মুখ শনাক্তকরণ</h3>
+                        <p class="text-sm">নিরাপত্তা এবং সোশ্যাল মিডিয়া ট্যাগিংয়ের জন্য ব্যবহৃত হয়।</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-center">
+                    <span class="text-4xl mr-4">&#128722;</span>
+                    <div>
+                        <h3 class="text-lg font-semibold">পণ্য সুপারিশ</h3>
+                        <p class="text-sm">অ্যামাজন এবং নেটফ্লিক্স আপনার পছন্দের উপর ভিত্তি করে পণ্য বা সিনেমা সুপারিশ করে।</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-center">
+                    <span class="text-4xl mr-4">&#128231;</span>
+                    <div>
+                        <h3 class="text-lg font-semibold">স্প্যাম ফিল্টারিং</h3>
+                        <p class="text-sm">আপনার ইনবক্সকে অবাঞ্ছিত ইমেল থেকে পরিষ্কার রাখে।</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-center">
+                    <span class="text-4xl mr-4">&#128176;</span>
+                    <div>
+                        <h3 class="text-lg font-semibold">আর্থিক জালিয়াতি সনাক্তকরণ</h3>
+                        <p class="text-sm">সন্দেহজনক লেনদেন শনাক্ত করে আর্থিক নিরাপত্তা বাড়ায়।</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-center">
+                    <span class="text-4xl mr-4">&#128663;</span>
+                    <div>
+                        <h3 class="text-lg font-semibold">স্বায়ত্তশাসিত যানবাহন</h3>
+                        <p class="text-sm">পারিপার্শ্বিক অবস্থা বিশ্লেষণ করে এবং নিরাপদে গাড়ি চালাতে সাহায্য করে।</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-center">
+                    <span class="text-4xl mr-4">&#127760;</span>
+                    <div>
+                        <h3 class="text-lg font-semibold">সোশ্যাল মিডিয়া</h3>
+                        <p class="text-sm">নিউজ ফিড ব্যক্তিগতকরণ এবং অনুপযুক্ত বিষয়বস্তু ফিল্টার করে।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#3D315B] text-white text-center p-6">
+        <p>&copy; ২০২৫ মেশিন লার্নিং ইনফোগ্রাফিক। সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+    <script>
+        function wrapLabels(label, maxLength) {
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        }
+        
+        const commonTooltipCallback = {
+            title: function(tooltipItems) {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                } else {
+                    return label;
+                }
+            }
+        };
+
+        const scatterCtx = document.getElementById('scatterChart').getContext('2d');
+        new Chart(scatterCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'প্রকৃত ডেটা',
+                    data: [{x: 1, y: 2}, {x: 2, y: 3.5}, {x: 3, y: 4}, {x: 4, y: 6}, {x: 5, y: 5.5}, {x: 6, y: 7}],
+                    backgroundColor: '#00C9A7',
+                    pointRadius: 6,
+                    pointHoverRadius: 8
+                }, {
+                    label: 'রিগ্রেশন লাইন',
+                    data: [{x: 0, y: 1.5}, {x: 7, y: 7.5}],
+                    type: 'line',
+                    borderColor: '#F9F871',
+                    borderWidth: 3,
+                    fill: false,
+                    pointRadius: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'স্বাধীন চলক'
+                        }
+                    },
+                    y: {
+                         title: {
+                            display: true,
+                            text: 'নির্ভরশীল চলক'
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                             title: function(tooltipItems) {
+                                if (tooltipItems[0].dataset.type === 'line') return 'রিগ্রেশন লাইন';
+                                return `ডেটা পয়েন্ট`;
+                             }
+                        }
+                    }
+                }
+            }
+        });
+
+        const donutCtx = document.getElementById('donutChart').getContext('2d');
+        new Chart(donutCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['স্প্যাম নয় (Not Spam)', 'স্প্যাম (Spam)'],
+                datasets: [{
+                    data: [85, 15],
+                    backgroundColor: ['#00C9A7', '#F9F871'],
+                    borderColor: ['#FFFFFF', '#FFFFFF'],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '60%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    tooltip: {
+                       callbacks: commonTooltipCallback
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
